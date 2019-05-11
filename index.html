@@ -97,6 +97,10 @@ window.onload = function() {
     document.getElementById("audioControls").innerHTML = "<p>Web audio required.</p>"
   }
 }
+
+document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    }, false);
 </script>
 </head>
 
