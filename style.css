@@ -1,7 +1,13 @@
+body {
+	touch-action: manipulation;
+}
+
 #bRow {
 	width:100%;
+	touch-action: manipulation;
 }
 
 #button {
 	width:45%;
+	touch-action: manipulation;
 }
