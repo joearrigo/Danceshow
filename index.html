@@ -7,63 +7,101 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	
 	<script>
-	var context = null;
-	var usingWebAudio = true;
-	if (typeof AudioContext !== 'undefined') {
-	  context = new AudioContext();
-	} else if (typeof webkitAudioContext !== 'undefined') {
-	  context = new webkitAudioContext();
-	} else {
-	  usingWebAudio = false;
-	}
-
-	var playing = false;
-	var osc = null;
-
-	function buttonPressdown(mFreq){
+	var tone1 = new Audio("tone1.ogg" );
+	var tone2 = new Audio("tone2.ogg" );
+	var tone3 = new Audio("tone3.ogg" );
+	var tone4 = new Audio("tone4.ogg" );
+	var tone5 = new Audio("tone5.ogg" );
+	var tone6 = new Audio("tone6.ogg" );
 		
-		if(playing && osc){
-			buttonPressup();
-		}else {
-			playing = true;
-			osc = context.createOscillator();
-			osc.connect(context.destination);
-			osc.frequency.value = mFreq;
-			osc.start(0);
-		}
+	tone1.oncanplaythrough = function(){
+		tone1.play();
 	}
-
+	tone2.oncanplaythrough = function(){
+		tone2.play();
+	}
+	tone3.oncanplaythrough = function(){
+		tone3.play();
+	}
+	tone4.oncanplaythrough = function(){
+		tone4.play();
+	}
+	tone5.oncanplaythrough = function(){
+		tone5.play();
+	}
+	tone6.oncanplaythrough = function(){
+		tone6.play();
+	}
+		
+	tone1.loop = true;
+	tone2.loop = true;
+	tone3.loop = true;
+	tone4.loop = true;
+	tone5.loop = true;
+	tone6.loop = true;
+		
+	tone1.onended = function(){
+		tone1.play();
+	}
+	tone2.onended = function(){
+		tone2.play();
+	}
+	tone3.onended = function(){
+		tone3.play();
+	}
+	tone4.onended = function(){
+		tone4.play();
+	}
+	tone5.onended = function(){
+		tone5.play();
+	}
+	tone6.onended = function(){
+		tone6.play();
+	}
+		
+	function playtone1(){
+		tone1.play();
+	}
+	function playtone2(){
+		tone2.play();
+	}
+	function playtone3(){
+		tone3.play();
+	}
+	function playtone4(){
+		tone4.play();
+	}
+	function playtone5(){
+		tone5.play();
+	}
+	function playtone6(){
+		tone6.play();
+	}
+		
 	function buttonPressup(){
-		if(playing && osc){
-			playing = false;
-			osc.stop(0);
-		}
+		tone1.pause();
+		tone2.pause();
+		tone3.pause();
+		tone4.pause();
+		tone5.pause();
+		tone6.pause();
 	}
-
-	window.onload = function() {
-	  if (!usingWebAudio) {
-		document.getElementById("audioControls").innerHTML = "<p>Web audio required.</p>"
-	  }
-	}
-	document.addEventListener("contextmenu", function (e) {
-			e.preventDefault();
-		}, false);
 	</script>
 </head>
 
 <body>
 	<div id="audioControls">
 		<div class="bRow">
-			<input type="image" src="shape1.png" class="button" ontouchstart="buttonPressdown(261.6)" ontouchend="buttonPressup()" oncontextmenu="buttonPressup()" draggable="false"/>
-			<input type="image" src="shape2.png" class="button" ontouchstart="buttonPressdown(293.7)" ontouchend="buttonPressup()" oncontextmenu="buttonPressup()" draggable="false"/>
+			<input type="image" src="shape1.png" class="button" ontouchstart="playtone1();" ontouchend="buttonPressup()" oncontextmenu="buttonPressup()" draggable="false"/>
+			<input type="image" src="shape2.png" class="button" ontouchstart="playtone2();" ontouchend="buttonPressup()" oncontextmenu="buttonPressup()" draggable="false"/>
 		</div>
 		<div class="bRow">
-			<input type="image" src="shape3.png" class="button" ontouchstart="buttonPressdown(329.6);" ontouchend="buttonPressup()" oncontextmenu="buttonPressup()" draggable="false"/>
-			<input type="image" src="shape4.png" class="button" ontouchstart="buttonPressdown(349.2);" ontouchend="buttonPressup()" oncontextmenu="buttonPressup()" draggable="false"/>
+			<input type="image" src="shape3.png" class="button" ontouchstart="playtone3();" ontouchend="buttonPressup()" oncontextmenu="buttonPressup()" draggable="false"/>
+			<input type="image" src="shape4.png" class="button" ontouchstart="playtone4();" ontouchend="buttonPressup()" oncontextmenu="buttonPressup()" draggable="false"/>
 		</div>
 		<div class="bRow">
-			<input type="image" src="shape5.png" class="button" ontouchstart="buttonPressdown(392.0);" ontouchend="buttonPressup()" oncontextmenu="buttonPressup()" draggable="false"/>
-			<input type="image" src="shape7.png" class="button" ontouchstart="buttonPressdown(440.0);" ontouchend="buttonPressup()" oncontextmenu="buttonPressup()" draggable="false"/>
+			<input type="image" src="shape5.png" class="button" ontouchstart="playtone5();" ontouchend="buttonPressup()" oncontextmenu="buttonPressup()" draggable="false"/>
+			<input type="image" src="shape7.png" class="button" ontouchstart="playtone6();" ontouchend="buttonPressup()" oncontextmenu="buttonPressup()" draggable="false"/>
 		</div>
   </div>
 </body>
