@@ -7,10 +7,41 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	
 	<script>
-	window.oncontextmenu = function(event) {
-	     event.preventDefault();
-	     event.stopPropagation();
-	     return false;
+	document.getElementById('b1').oncontextmenu = function(event) {
+	    event.preventDefault();
+	    event.stopPropagation(); // not necessary in my case, could leave in case stopImmediateProp isn't available? 
+	    event.stopImmediatePropagation();
+	    return false;
+	};
+	document.getElementById('b2').oncontextmenu = function(event) {
+	    event.preventDefault();
+	    event.stopPropagation(); // not necessary in my case, could leave in case stopImmediateProp isn't available? 
+	    event.stopImmediatePropagation();
+	    return false;
+	};
+	document.getElementById('b3').oncontextmenu = function(event) {
+	    event.preventDefault();
+	    event.stopPropagation(); // not necessary in my case, could leave in case stopImmediateProp isn't available? 
+	    event.stopImmediatePropagation();
+	    return false;
+	};
+	document.getElementById('b4').oncontextmenu = function(event) {
+	    event.preventDefault();
+	    event.stopPropagation(); // not necessary in my case, could leave in case stopImmediateProp isn't available? 
+	    event.stopImmediatePropagation();
+	    return false;
+	};
+	document.getElementById('b5').oncontextmenu = function(event) {
+	    event.preventDefault();
+	    event.stopPropagation(); // not necessary in my case, could leave in case stopImmediateProp isn't available? 
+	    event.stopImmediatePropagation();
+	    return false;
+	};
+	document.getElementById('b6').oncontextmenu = function(event) {
+	    event.preventDefault();
+	    event.stopPropagation(); // not necessary in my case, could leave in case stopImmediateProp isn't available? 
+	    event.stopImmediatePropagation();
+	    return false;
 	};
 	</script>
 	
