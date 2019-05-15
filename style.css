@@ -11,3 +11,8 @@ body {
 	width:45%;
 	touch-action: manipulation;
 }
+
+.audioControls {
+	padding: 70px 0;
+  	text-align: center;
+}
